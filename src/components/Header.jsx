@@ -9,14 +9,14 @@ const Header = () => {
 
   return (
     <header className="w-full bg-gradient-to-r from-blue-200 to-gray-200 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center flex-wrap">
         {/* Logo */}
-        <Link to="/" className="flex items-center text-2xl font-bold text-blue-700">
+        <Link to="/" className="flex items-center text-2xl font-bold text-blue-700 mb-4 sm:mb-0">
           <Store className="w-8 h-8 text-blue-700 mr-2" /> MyShop
         </Link>
 
         {/* Centered Navigation */}
-        <nav className="flex space-x-4">
+        <nav className="flex space-x-4 mb-4 sm:mb-0 sm:flex-row flex-col items-center">
           <Link to="/">
             <button className="px-4 py-2 bg-blue-500 text-white rounded-lg transition duration-300 hover:bg-blue-700 shadow-md">
               Home
@@ -49,3 +49,4 @@ const Header = () => {
 };
 
 export default Header;
+
