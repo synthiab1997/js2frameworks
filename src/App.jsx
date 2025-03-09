@@ -1,29 +1,30 @@
 import React from 'react'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import CartProvider from './context/CartContext';
+import CartProvider from './context/CartContext';  
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
-import CheckoutPage from './pages/CheckoutPage'; 
 import CheckoutSuccessPage from './pages/CheckoutSuccessPage'; 
-import ContactPage from './pages/contactPage';
+import ContactPage from './pages/ContactPage';
 import ProductPage from './pages/ProductPage';
 import './index.css'; 
 
 function App() {
-  return (
+  return ( 
+    <CartProvider> 
       <Router>
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="/checkout-success" element={<CheckoutSuccessPage />} />
+            <Route path="/products" element={<HomePage />} />  
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout-success" element={<CheckoutSuccessPage />} /> {/* ✅ Ensure this exists */}
             <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </Layout>
       </Router>
+    </CartProvider>
   );
 }
 

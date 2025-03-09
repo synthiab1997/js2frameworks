@@ -18,7 +18,7 @@ const ProductPage = () => {
         if (!response.ok) throw new Error("Failed to fetch product details");
         
         const data = await response.json();
-        console.log("Fetched Product:", data); // 🔍 Check API response
+
         setProduct(data.data);
       } catch (err) {
         setError(err.message);

@@ -26,7 +26,12 @@ const CartPage = () => {
         <div className="space-y-4">
           {cart.map((item) => (
             <div key={item.id} className="flex items-center justify-between border-b pb-4">
-              <img src={item.image} alt={item.title} className="w-20 h-20 object-cover" />
+              {/* Fix: Updated Image URL */}
+              <img 
+                src={item.image?.url || "https://via.placeholder.com/100"} 
+                alt={item.title} 
+                className="w-20 h-20 object-cover" 
+              />
               <div>
                 <h3 className="font-bold">{item.title}</h3>
                 <p>${item.price}</p>
@@ -58,8 +63,9 @@ const CartPage = () => {
             <button onClick={clearCart} className="bg-gray-500 text-white p-2 rounded">
               Clear Cart
             </button>
-            <Link to="/checkout" className="bg-green-500 text-white p-2 rounded">
-              Proceed to Checkout
+            {/* Fix: Redirecting to Checkout Success Page */}
+            <Link to="/checkout-success" className="bg-green-500 text-white p-2 rounded">
+              Confirm Order
             </Link>
           </div>
         </div>

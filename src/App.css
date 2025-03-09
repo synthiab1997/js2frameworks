@@ -1,10 +1,12 @@
-
-
+/* Main styling for the app */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100vw; /* Ensure full viewport width */
+  height: 100vh; /* Ensure full viewport height */
+  margin: 0;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -13,9 +15,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -35,18 +39,40 @@
   }
 }
 
+/* Ensure the cards take full width */
 .card {
   padding: 2em;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Make sure padding doesn't affect the width */
 }
 
 .read-the-docs {
   color: #888;
 }
+
 .animate-spin {
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ensure content sections like header/footer also fill the full screen */
+header, footer {
+  width: 100%; /* Full width */
+  padding: 0 2rem;
+}
+
+/* Full height layout */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
