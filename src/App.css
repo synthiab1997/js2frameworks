@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Main styling for the app */
 #root {
   width: 100vw; /* Ensure full viewport width */
